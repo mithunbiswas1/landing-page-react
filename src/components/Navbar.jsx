@@ -13,7 +13,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full fixed top-0 left-0 right-0 backdrop-blur-sm shadow-sm bg-white/90 border border-gray-100">
+    <nav className="w-full fixed top-0 left-0 right-0 backdrop-blur-sm shadow-sm bg-white/90 border border-gray-100 z-50">
       <div className="container mx-auto w-full flex justify-between items-center gap-4 h-16 md:h-20 px-8 md:px-4">
         {/* Logos */}
         <div className="flex justify-center cursor-pointer">

@@ -6,10 +6,10 @@ export const Navbar = () => {
   const [activeLink, setActiveLink] = useState("#home");
 
   const navList = [
-    { href: "/#home", label: "Home" },
-    { href: "/#about", label: "About" },
-    { href: "/#services", label: "Services" },
-    { href: "/#contact", label: "Contact" },
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (

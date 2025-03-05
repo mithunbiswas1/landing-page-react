@@ -4,7 +4,10 @@ import heroImage from "../assets/hero-image.png";
 
 export const HeroSection = () => {
   return (
-    <div className="container mx-auto pt-44 pb-6 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center ">
+    <div
+      id="home"
+      className="container mx-auto pt-44 pb-6 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center "
+    >
       {/* Left col */}
       <div className="w-full md:w-1/2 space-y-8">
         <div className="flex items-center gap-2 bg-gray-50 w-fit px-4 py-2 rounded-full hover:bg-gray-100 transition-colors cursor-pointer group">
@@ -41,7 +44,6 @@ export const HeroSection = () => {
       </div>
 
       {/* Right col */}
-      <div className="w-full md:w-1/2 mt-16 pl-0 md:pl-12">right</div>
       <div className="relative">
         <img
           src={heroImage}

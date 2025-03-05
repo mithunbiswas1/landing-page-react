@@ -20,7 +20,7 @@ export const CompanyLogo = () => {
     sitepoint,
   ];
   return (
-    <div className="w-full container mx-auto py-20 px-8 sm:px-6 lg:px-8 flex sm:flex-row flex-col sm:items-center items-start">
+    <div className="w-full overflow-hidden container mx-auto py-20 flex sm:flex-row flex-col sm:items-center items-start">
       <div className="w-[300px] shrink-0 text-gray-600 px-4 border-l-4 border-blue-500 bg-white py-2 z-10 sm:text-base text-xl font-semibold text-left">
         Proud partner at <br />
         Hubspot & Segment

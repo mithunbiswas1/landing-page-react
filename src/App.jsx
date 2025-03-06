@@ -1,8 +1,10 @@
 import { CompanyLogo } from "./components/CompanyLogo";
 import { FeaturesSection } from "./components/FeaturesSection";
 import { HeroSection } from "./components/HeroSection";
+import { MonitorSection } from "./components/MonitorSection";
 import { Navbar } from "./components/Navbar";
 import { PurposeSection } from "./components/PurposeSection";
+import { ScheduleSection } from "./components/ScheduleSection";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <CompanyLogo />
         <PurposeSection />
         <FeaturesSection />
+        <ScheduleSection />
+        <MonitorSection />
       </div>
     </main>
   );

@@ -1,8 +1,10 @@
 import { CompanyLogo } from "./components/CompanyLogo";
 import { FeaturesSection } from "./components/FeaturesSection";
+import { FooterSection } from "./components/FooterSection";
 import { HeroSection } from "./components/HeroSection";
 import { MonitorSection } from "./components/MonitorSection";
 import { Navbar } from "./components/Navbar";
+import { NewsLetterSection } from "./components/NewsLetterSection";
 import { PricingSection } from "./components/PricingSection";
 import { PurposeSection } from "./components/PurposeSection";
 import { ScheduleSection } from "./components/ScheduleSection";
@@ -24,6 +26,8 @@ function App() {
         <PricingSection />
         <ServiceSection />
         <TestimonialSection />
+        <NewsLetterSection />
+        <FooterSection />
       </div>
     </main>
   );

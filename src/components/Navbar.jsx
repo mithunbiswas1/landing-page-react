@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { motion } from "framer-motion";
+import { fadeIn } from "../ultils/motion";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,11 +11,17 @@ export const Navbar = () => {
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
-    { href: "#contact", label: "Contact" },
+    { href: "#testimonials", label: "Testimonials" },
   ];
 
   return (
-    <nav className="w-full fixed top-0 left-0 right-0 backdrop-blur-sm shadow-sm bg-white/90 border border-gray-100 z-50">
+    <motion.nav
+      variants={fadeIn("down", 0.2)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="w-full fixed top-0 left-0 right-0 backdrop-blur-sm shadow-sm bg-white/90 border border-gray-100 z-50"
+    >
       <div className="container mx-auto w-full flex justify-between items-center gap-4 h-16 md:h-20 px-8 md:px-4">
         {/* Logos */}
         <div className="flex justify-center cursor-pointer">
@@ -87,6 +95,6 @@ export const Navbar = () => {
           </div>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };

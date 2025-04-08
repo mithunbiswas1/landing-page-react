@@ -34,7 +34,7 @@ export const ServiceSection = () => {
   ];
 
   return (
-    <section className="px-4 py-20">
+    <section className="px-4 py-20" id="services">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24">
           {/* header  */}

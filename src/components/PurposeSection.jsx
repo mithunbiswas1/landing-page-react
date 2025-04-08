@@ -1,5 +1,8 @@
 import React from "react";
 
+import { motion } from "framer-motion";
+import { fadeIn, textVariant } from "../ultils/motion";
+
 export const features = [
   {
     icon: "🟣", // Replace with your actual icon component or image
@@ -21,17 +24,27 @@ export const PurposeSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
           {/* heading text */}
-          <div className="">
+          <motion.div
+            variants={fadeIn("right", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            className=""
+          >
             <p className="text-sm text-purple-600 font-medium mb-2">
               ACHIVE MORE
             </p>
             <h2 className="text-3xl md:w-4/5 w-full md:text-4xl font-bold text-gray-900">
               Purpose of a convoy is to keep your team
             </h2>
-          </div>
+          </motion.div>
 
           {/* bullet points */}
-          <div className="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            className="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
             {features.map((feature, index) => (
               <div className="flex space-x-4">
                 <div className="w-12 h-12 flex items-center justify-start rounded-full">
@@ -45,7 +58,7 @@ export const PurposeSection = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

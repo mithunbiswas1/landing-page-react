@@ -28,7 +28,8 @@ const footerLinks = {
 export const FooterSection = () => {
   return (
     <footer className="bg-gray-50">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 pb-8">
+        {/* footer top section  */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* brand column  */}
           <div className="lg:col-span-4">
@@ -40,7 +41,7 @@ export const FooterSection = () => {
               <span className="text-xl font-bold ml-1">The Next Design</span>
             </div>
 
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 w-3/4">
               The cioy warned Little Blind Text, that where it came from it
               would have been rewritten a thoudand times.
             </p>
@@ -70,18 +71,40 @@ export const FooterSection = () => {
           </div>
 
           {/* footer navigation  */}
-          <div className="">
-            <div className="">
+          <div className="lg:col-span-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {Object.entries(footerLinks).map(
                 ([category, links], categoryIndex) => (
-                  <div key={category} className="flex items-center">
+                  <div key={category} className="">
                     <h3 className="text-lg font-semibold mb-4 uppercase">
                       {category}
                     </h3>
+                    <ul className="space-y-2">
+                      {links.map((link, index) => (
+                        <li>
+                          <a
+                            href="#"
+                            className="text-gray-600 hover:text-gray-900"
+                          >
+                            {link.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )
               )}
             </div>
+          </div>
+        </div>
+
+        {/* footer bottom copyright section */}
+        <div className="border-t border-gray-200 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-600 text-sm">
+              Copyright &copy; {new Date().getFullYear()} landingpage.com
+            </p>
+            <p className="text-gray-600 text-sm">Created by Mithun Biswas</p>
           </div>
         </div>
       </div>

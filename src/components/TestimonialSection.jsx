@@ -1,6 +1,7 @@
 import React from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
+import { fadeIn, textVariant } from "../ultils/motion";
 
 // Import Swiper styles
 import "swiper/css";
@@ -50,14 +51,19 @@ const testimonials = [
 export default function TestimonialSection() {
   return (
     <section className="py-16 px-4 max-w-7xl mx-auto" id="testimonials">
-      <div className="text-center">
+      <motion.div
+        variants={fadeIn("down", 0.2)}
+        initial="hidden"
+        whileInView="show"
+        className="text-center"
+      >
         <h2 className="text-3xl md:text-4xl font-bold mb-4 ">
           What our happy client say
         </h2>
         <p className="text-gray-600">
           Things that make it the best place to start trading
         </p>
-      </div>
+      </motion.div>
 
       {/* tesmonials card */}
       <div className="relative">
@@ -87,7 +93,12 @@ export default function TestimonialSection() {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index} className="h-full py-4 md:py-12">
-              <div className="text-center bg-white p-4 rounded-lg shadow-md flex flex-col h-full">
+              <motion.div
+                variants={fadeIn("up", 0.2 * index)}
+                initial="hidden"
+                whileInView="show"
+                className="text-center bg-white p-4 rounded-lg shadow-md flex flex-col h-full"
+              >
                 <div className="w-24 h-24 mx-auto mb-4">
                   <img
                     src={testimonial.image}
@@ -102,13 +113,13 @@ export default function TestimonialSection() {
                 </div>
                 <h3 className=" font-semibold mb-3">{testimonial.name}</h3>
                 <p className="text-gray-600">{testimonial.text}</p>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* navigational button  */}
-        <div className="flex justify-center gap-4 mt-4 md:mt-8">
+        <motion.div className="flex justify-center gap-4 mt-4 md:mt-8">
           <button className="swiper-button-prev-custom w-12 h-12 rounded-full border-gray-200 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-200 cursor-pointer">
             <BsChevronLeft className="size-6" />
           </button>
@@ -116,7 +127,7 @@ export default function TestimonialSection() {
           <button className="swiper-button-next-custom w-12 h-12 rounded-full border-gray-200 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-200 cursor-pointer">
             <BsChevronRight className="size-6" />
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

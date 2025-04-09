@@ -1,5 +1,7 @@
 import React from "react";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { motion } from "framer-motion";
+import { fadeIn, textVariant } from "../ultils/motion";
 
 const footerLinks = {
   company: [
@@ -32,7 +34,12 @@ export const FooterSection = () => {
         {/* footer top section  */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* brand column  */}
-          <div className="lg:col-span-4">
+          <motion.div
+            variants={fadeIn("up", 0.1)}
+            initial="hidden"
+            whileInView="show"
+            className="lg:col-span-4"
+          >
             <div className="flex items-center gap-2 mb-4">
               <div className="flex justify-center cursor-pointer">
                 <div className="h-4 w-4 bg-blue-600 rounded-full opacity-75 hover:opacity-100 transition-opacity"></div>
@@ -68,30 +75,40 @@ export const FooterSection = () => {
                 <FaLinkedin className="size-5" />
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* footer navigation  */}
           <div className="lg:col-span-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {Object.entries(footerLinks).map(
                 ([category, links], categoryIndex) => (
-                  <div key={category} className="">
+                  <motion.div
+                    variants={fadeIn("up", 0.2 * categoryIndex)}
+                    initial="hidden"
+                    whileInView="show"
+                    key={category}
+                    className=""
+                  >
                     <h3 className="text-lg font-semibold mb-4 uppercase">
                       {category}
                     </h3>
                     <ul className="space-y-2">
                       {links.map((link, index) => (
-                        <li>
+                        <motion.li
+                          variants={fadeIn("up", 0.2 * index)}
+                          initial="hidden"
+                          whileInView="show"
+                        >
                           <a
                             href="#"
                             className="text-gray-600 hover:text-gray-900"
                           >
                             {link.name}
                           </a>
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
-                  </div>
+                  </motion.div>
                 )
               )}
             </div>
@@ -101,10 +118,22 @@ export const FooterSection = () => {
         {/* footer bottom copyright section */}
         <div className="border-t border-gray-200 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-sm">
+            <motion.p
+              variants={fadeIn("right", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              className="text-gray-600 text-sm"
+            >
               Copyright &copy; {new Date().getFullYear()} landingpage.com
-            </p>
-            <p className="text-gray-600 text-sm">Created by Mithun Biswas</p>
+            </motion.p>
+            <motion.p
+              variants={fadeIn("left", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              className="text-gray-600 text-sm"
+            >
+              Created by Mithun Biswas
+            </motion.p>
           </div>
         </div>
       </div>

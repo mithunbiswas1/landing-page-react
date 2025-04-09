@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { fadeIn, textVariant } from "../ultils/motion";
 
 export const PricingSection = () => {
   const [productCount, setProductCount] = useState(1);
@@ -10,28 +12,48 @@ export const PricingSection = () => {
   return (
     <section className="px-4 py-20">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        <motion.h2
+          variants={fadeIn("down", 0.2)}
+          initial="hidden"
+          whileInView="show"
+          className="text-3xl md:text-4xl font-bold text-center mb-16"
+        >
           Pricing
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Starter Plan */}
-          <div className="bg-white p-8 rounded-lg shadow-lg">
+          <motion.div
+            variants={fadeIn("right", 0.3)}
+            initial="hidden"
+            whileInView="show"
+            className="bg-white p-8 rounded-lg shadow-lg"
+          >
             <h3 className="text-xl text-gray-600 mb-4">Starter</h3>
             <p className="text-3xl md:text-4xl font-bold">${staterPrice}/mo</p>
-          </div>
+          </motion.div>
 
           {/* Business Plan */}
-          <div className="bg-white p-8 rounded-lg shadow-lg">
+          <motion.div
+            variants={fadeIn("left", 0.3)}
+            initial="hidden"
+            whileInView="show"
+            className="bg-white p-8 rounded-lg shadow-lg"
+          >
             <h3 className="text-xl text-gray-600 mb-4">Business</h3>
             <p className="text-3xl md:text-4xl font-bold">
               ${businessPrice}/mo
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Range */}
-        <div className="max-w-xl mx-auto ">
+        <motion.div
+          variants={fadeIn("up", 0.4)}
+          initial="hidden"
+          whileInView="show"
+          className="max-w-xl mx-auto "
+        >
           <p className="text-center text-gray-600">{productCount} products</p>
 
           <div className="relative px-4">
@@ -55,7 +77,7 @@ export const PricingSection = () => {
               Get Started
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

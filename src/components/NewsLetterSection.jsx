@@ -1,10 +1,17 @@
 import React from "react";
 import { HiArrowRight } from "react-icons/hi";
+import { motion } from "framer-motion";
+import { fadeIn, textVariant } from "../ultils/motion";
 
 export const NewsLetterSection = () => {
   return (
     <section className="container mx-auto px-4 py-16" id="newsLetter">
-      <div className="bg-blue-600 rounded-2xl overflow-hidden">
+      <motion.div
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        whileInView="show"
+        className="bg-blue-600 rounded-2xl overflow-hidden"
+      >
         <div className="relative px-6 md:px-16 py-16 md:py-24">
           {/* gradient bg */}
           <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-700 clip-path-slant hidden md:block"></div>
@@ -12,17 +19,32 @@ export const NewsLetterSection = () => {
           <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
             {/* left content  */}
             <div className="text-white max-w-lg text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-4">
+              <motion.h2
+                variants={fadeIn("right", 0.4)}
+                initial="hidden"
+                whileInView="show"
+                className="text-2xl md:text-3xl lg:text-4xl font-medium mb-4"
+              >
                 Subscribe newsletter
-              </h2>
-              <p className="text-blue-100 text-sm sm:text-base">
+              </motion.h2>
+              <motion.p
+                variants={fadeIn("right", 0.5)}
+                initial="hidden"
+                whileInView="show"
+                className="text-blue-100 text-sm sm:text-base"
+              >
                 Best cooks and best delivery guys all at your service. Hot tasty
                 food
-              </p>
+              </motion.p>
             </div>
 
             {/* right content  */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-0">
+            <motion.div
+              variants={fadeIn("left", 0.6)}
+              initial="hidden"
+              whileInView="show"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-0"
+            >
               <input
                 type="email"
                 name=""
@@ -34,10 +56,10 @@ export const NewsLetterSection = () => {
                 <span>Discover</span>
                 <HiArrowRight className="size-5" />
               </button>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
